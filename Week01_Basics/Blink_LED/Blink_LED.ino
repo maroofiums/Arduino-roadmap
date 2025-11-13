@@ -1,13 +1,10 @@
-/*
-  Project: Blink_LED
-  Description: Starter code
-*/
-
 void setup() {
-  // Initialize serial communication
-  Serial.begin(9600);
+  pinMode(13, OUTPUT);  
 }
 
 void loop() {
-  // Your code here
+  digitalWrite(13, HIGH); 
+  delay(500);             
+  digitalWrite(13, LOW);  
+  delay(500);             
 }
