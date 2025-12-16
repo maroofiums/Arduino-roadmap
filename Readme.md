@@ -1,128 +1,76 @@
-# Arduino roadmap
+# Arduino Roadmap
+---
 
-## **Week 1: Setup & Basics**
+## **Week 1 — Arduino Basics & Digital I/O**
 
-**Goal:** Arduino se familiar ho jao
+**Goal:** Understand microcontroller, pins, input/output, and basic sensors.
 
-* Install Arduino IDE / Web Editor
-* Understand board, pins, power supply
-* Upload your first sketch
-* **Core Concepts:** `setup()`, `loop()`, `pinMode()`, `digitalWrite()`, `digitalRead()`
-* **Mini Projects:**
-
-  * Blink LED
-  * Button-controlled LED
+| Day | Topic                     | Hands-on Exercise                                       | Concepts/Notes                                                 |
+| --- | ------------------------- | ------------------------------------------------------- | -------------------------------------------------------------- |
+| 1   | Arduino IDE & Blink       | Blink onboard LED, change blink speed, add external LED | `pinMode`, `digitalWrite`, `delay`, sketch workflow            |
+| 2   | Digital Input (Button)    | Connect button → LED ON/OFF                             | `digitalRead`, pull-up/pull-down resistors, input debouncing   |
+| 3   | Servo Motor Basics        | Move servo 0° → 90° → 180° → back                       | PWM, `Servo.h` library, angles, control logic                  |
+| 4   | DHT11 Sensor              | Read temperature & humidity, print on Serial Monitor    | Analog vs digital sensors, sensor libraries, serial debugging  |
+| 5   | HC-SR04 Ultrasonic Sensor | Measure distance → print in cm                          | `pulseIn()`, timing calculation, obstacle detection            |
+| 6   | Mini Project              | Button → LED → Servo sequence                           | Combine input + output logic, flowchart style notes            |
+| 7   | Revision & Notes          | Draw circuit diagrams of all components used            | Write “Input → Logic → Output” flow for each, reinforce memory |
 
 ---
 
-## **Week 2: Digital & Analog I/O**
+## **Week 2 — Arduino Analog & Advanced I/O**
 
-**Goal:** Inputs aur outputs control karna seekho
+**Goal:** Mix digital + analog, learn lights and more interactive controls.
 
-* **Digital:** LEDs, buttons
-* **Analog:** Potentiometer, analog sensors, PWM (`analogWrite`)
-* **Mini Projects:**
-
-  * LED brightness control with potentiometer
-  * Simple traffic light simulation
-
----
-
-## **Week 3: Sensors & Actuators**
-
-**Goal:** Environment sense karke react karna
-
-* **Sensors:**
-
-  * Temperature (LM35, DHT11)
-  * Ultrasonic distance (HC-SR04)
-  * Light (LDR)
-* **Actuators:**
-
-  * Servo motor
-  * DC motor + motor driver
-  * Buzzer
-* **Mini Projects:**
-
-  * Temperature-based fan control
-  * Ultrasonic parking sensor
+| Day | Topic                 | Hands-on Exercise                                          | Concepts/Notes                          |
+| --- | --------------------- | ---------------------------------------------------------- | --------------------------------------- |
+| 1   | Analog Input          | Connect potentiometer → control LED brightness             | `analogRead()`, PWM, map values         |
+| 2   | Multiple LEDs         | Blink patterns, sequence LEDs like traffic lights          | Loops, timing, sequencing               |
+| 3   | Button + Servo        | Press button → Servo moves + LED blinks                    | Combine input + output with timing      |
+| 4   | Sensor + Output Logic | DHT11 → if temp > 30°C → LED ON                            | Conditional logic, threshold triggering |
+| 5   | HC-SR04 + Servo       | Object detected → Servo moves                              | Event-driven logic, function usage      |
+| 6   | Mini Project          | Simple alarm: object detected → LED + Servo + Serial alert | Integrate multiple components           |
+| 7   | Revision              | Make a summary table: Sensor → Input → Output              | Helpful for bigger IoT projects         |
 
 ---
 
-## **Week 4: Serial Communication & Displays**
+## **Week 3 — ESP32 Basics & IoT**
 
-**Goal:** Arduino se PC aur displays communicate karna
+**Goal:** Learn WiFi, ESP32 pins, online communication.
 
-* **Serial:** `Serial.begin()`, `Serial.print()`, `Serial.read()`
-* **Displays:**
-
-  * LCD (16x2, I2C)
-  * OLED
-* **Mini Projects:**
-
-  * Temperature sensor reading on LCD
-  * Interactive serial monitor game
-
----
-
-## **Week 5: Wireless Communication**
-
-**Goal:** Arduino ko wireless control karna
-
-* **Modules:**
-
-  * Bluetooth (HC-05)
-  * WiFi (ESP8266 / ESP32)
-* **Mini Projects:**
-
-  * Bluetooth LED control
-  * WiFi IoT temperature monitor
+| Day | Topic              | Hands-on Exercise                                     | Concepts/Notes                                        |
+| --- | ------------------ | ----------------------------------------------------- | ----------------------------------------------------- |
+| 1   | ESP32 Blink & Pins | Blink onboard LED, identify GPIO pins                 | ESP32 vs Arduino UNO differences                      |
+| 2   | WiFi Connection    | Connect ESP32 to WiFi, print IP                       | `WiFi.h` library, Serial Monitor debugging            |
+| 3   | HTTP GET Request   | Send dummy GET request to API                         | `HTTPClient` library, JSON basics                     |
+| 4   | DHT11 → Cloud      | Send temperature & humidity to **ThingSpeak**         | API keys, HTTP POST, data logging                     |
+| 5   | Remote Control     | Control LED/Servo via ESP32 web server                | HTML basics, server endpoints, GPIO control           |
+| 6   | IoT Mini Project   | Web-controlled LED + sensor readings displayed online | End-to-end IoT workflow                               |
+| 7   | Revision & Notes   | Draw ESP32 + WiFi + Sensors diagram                   | Data flow understanding, connections, online → device |
 
 ---
 
-## **Week 6: Advanced Sensors & Libraries**
+## **Week 4 — Advanced IoT & Mini Projects**
 
-**Goal:** Ready-made libraries se kaam karna
+**Goal:** Integrate multiple sensors + actuators + online control.
 
-* **Libraries:** Servo, DHT, LiquidCrystal_I2C, Adafruit_Sensor
-* **Advanced Sensors:**
-
-  * Gas sensor
-  * Motion sensor (PIR)
-  * Soil moisture sensor
-* **Mini Projects:**
-
-  * Smart garden system (moisture + water pump)
-  * Motion-detect alarm with buzzer
-
----
-
-## **Week 7: Robotics & Automation**
-
-**Goal:** Arduino se real-world automation
-
-* **Robotics:** Line-following robot, obstacle avoiding robot
-* **Automation:** Smart home lights/fan control
-* **Mini Projects:**
-
-  * Line-following car
-  * Light-activated home automation
+| Day | Topic                   | Hands-on Exercise                                   | Concepts/Notes                                      |
+| --- | ----------------------- | --------------------------------------------------- | --------------------------------------------------- |
+| 1   | Multiple Sensors        | DHT11 + HC-SR04 → Display on Serial                 | Multi-sensor reading, timing                        |
+| 2   | Threshold Alerts        | Temp > 30°C → LED + Buzzer (if available)           | Conditional logic, event handling                   |
+| 3   | ESP32 Web Server        | Display sensor values on simple webpage             | HTML table, page refresh, dynamic updates           |
+| 4   | Remote Control + Sensor | Control servo/LED via webpage                       | Combine input & output over WiFi                    |
+| 5   | MQTT Introduction       | Send sensor data to MQTT broker                     | Publisher & Subscriber concept, IoT standard        |
+| 6   | Mini IoT Project        | Temperature & Distance Monitoring → Alerts on Phone | Integrate sensors, ESP32, web server, optional MQTT |
+| 7   | Revision & Notes        | Draw full IoT system diagram                        | End-to-end understanding, ready for bigger projects |
 
 ---
 
-## **Week 8: Final Projects & Best Practices**
+### **Extra Tips**
 
-**Goal:** Large project build + code optimization
-
-* **Techniques:**
-
-  * Functions for code modularity
-  * Avoid `delay()`; use `millis()`
-  * Debugging with Serial Monitor
-* **Final Projects:**
-
-  * IoT-based smart home dashboard
-  * Arduino-based security system
-  * Multi-sensor weather station
+* Keep **one page notes per component**: connections, libraries, example code.
+* Test each sensor separately before combining — avoid debugging headache.
+* Treat “IoT” like Python functions: Input → Process → Output, but physical/online.
+* Use a **breadboard** for safe experimentation.
+* Take photos of circuits for reference.
 
 ---
