@@ -1,11 +1,17 @@
-# Digital Input (Button)
+# Day 2 - Button Input
 
 ## Goal
+Read button input and control LED
 
-Write notes about Digital Input (Button) here.
+## Key Concepts
+- digitalRead()
+- INPUT_PULLUP
+- HIGH vs LOW logic
 
-## Concepts / Observations
+## Observation
+- Button pressed = LOW
+- Button released = HIGH
 
-- 
-- 
-- 
+## Common Mistakes
+- Floating input
+- Wrong button legs
