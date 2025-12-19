@@ -1,24 +1,3 @@
-# Day 4 - DHT11 Sensor
-
-## Goal
-Read temperature and humidity
-
-## Key Concepts
-- Digital sensor
-- DHT library
-- Serial communication
-
-## Observation
-- Sensor updates every 2 seconds
-- Invalid data possible → check isnan()
-
-## Real Use
-- Weather station
-- Smart home
-- IoT monitoring
-
-## Code
-```cpp
 #include <DHT.h>
 
 #define DHTPIN 9
@@ -49,5 +28,3 @@ void loop() {
 
 
 }
-```
-
