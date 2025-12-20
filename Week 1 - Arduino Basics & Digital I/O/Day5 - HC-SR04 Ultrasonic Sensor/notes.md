@@ -1,11 +1,17 @@
-# HC-SR04 Ultrasonic Sensor
+# Day 5 - HC-SR04 Ultrasonic Sensor
 
 ## Goal
+Measure distance using ultrasonic waves
 
-Write notes about HC-SR04 Ultrasonic Sensor here.
+## Key Concepts
+- TRIG & ECHO
+- pulseIn()
+- Time to distance conversion
 
-## Concepts / Observations
+## Formula
+distance = (duration × 0.034) / 2
 
-- 
-- 
-- 
+## Real Uses
+- Parking sensor
+- Obstacle avoidance
+- Smart dustbin
